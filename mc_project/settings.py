@@ -31,8 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-rebazp-p4motorcycleblog-uloqwi7v9g2.ws-eu111.gitpod.io',
-'mcblog.herokuapp.com', 'localhost']
-
+'mcblog.herokuapp.com', 'mcblog-ee5e41319303.herokuapp.com', 'localhost']
 
 # Application definition
 
