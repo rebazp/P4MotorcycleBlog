@@ -31,6 +31,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+#CROS-ORIGIN Resource Sharing CORS
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
 ALLOWED_HOSTS = ['8000-rebazp-p4motorcycleblog-uloqwi7v9g2.ws-eu111.gitpod.io',
 'mcblog.herokuapp.com', 'mcblog-ee5e41319303.herokuapp.com', 'localhost',
 ]
