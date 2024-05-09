@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['8000-rebazp-p4motorcycleblog-uloqwi7v9g2.ws-eu111.gitpod.io',
-'mcblog.herokuapp.com', 'mcblog-ee5e41319303.herokuapp.com', 'localhost', 
+'mcblog.herokuapp.com', 'mcblog-ee5e41319303.herokuapp.com', 'localhost',
 ]
 
 # Application definition
@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'django_summernote',
     'crispy_forms',
+    "crispy_bootstrap5",
     'blog',
 ]
 
@@ -62,7 +63,9 @@ LOGOUT_REDIRECT_URL = '/'
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -109,6 +112,10 @@ WSGI_APPLICATION = 'mc_project.wsgi.application'
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+
+CSRF_TRUSTED_ORIGINS = [
+"https://8000-rebazp-p4motorcycleblog-uloqwi7v9g2.ws-eu111.gitpod.io",
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
