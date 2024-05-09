@@ -6,6 +6,9 @@ from .forms import CommentForm
 from django.contrib import messages
 
 
+"""
+These are the views and functions that are avilable on specific pages in the blog.
+"""
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
