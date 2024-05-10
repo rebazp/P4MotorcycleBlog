@@ -1,0 +1,44 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h1 class="text-center">Edit your post</h1>
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group row">
+          <label for="id_title" class="col-sm-3 col-form-label">Title:</label>
+          <div class="col-sm-5">
+            {{ form.title }}
+          </div>
+        </div>
+        <div class="form-group row">
+          <label id="text_input" for="id_body" class="col-sm-3 col-form-label">Text:</label>
+          <div class="col-sm-5">
+            {{ form.body }}
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="id_featured_image" class="col-sm-3 col-form-label">Post Image:(optional)</label>
+          <div class="col-sm-5">
+            <input type="file" style="margin-bottom: 20px;" id="id_featured_image" name="featured_image">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="id_author_image" class="col-sm-3 col-form-label">Profile Image:(optional)</label>
+          <div class="col-sm-5">
+            <input type="file" id="id_author_image" name="author_image">
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-5 offset-sm-3">
+            <button style="margin-top: 20px;" class="btn btn-signup right btn-lg" type="submit">Post</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

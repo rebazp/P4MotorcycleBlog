@@ -4,8 +4,9 @@ from django.http import HttpResponseRedirect
 from .models import Post, Comment
 from .forms import CommentForm, PostForm
 from django.contrib import messages
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
 
 
 """
@@ -111,3 +112,24 @@ class AddPostView(LoginRequiredMixin, CreateView):
 
     def get_success_url(self):
         return reverse_lazy('post_list')
+
+
+class UpdatePostView(LoginRequiredMixin, UpdateView):
+    model = Post
+    template_name = 'update_post.html'
+    form_class = PostForm
+    success_url = reverse_lazy('post_list')  
+
+    def dispatch(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        if self.object.author != self.request.user:
+            messages.error(self.request, 'You are not authorized to update this post.')
+            return HttpResponseRedirect(self.success_url)
+        return super().dispatch(request, *args, **kwargs)
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        form.instance.featured_image = self.request.FILES.get('featured_image')  
+        form.instance.author_image = self.request.FILES.get('author_image')  
+        messages.success(self.request, 'Your post has been updated')
+        return super().form_valid(form)
