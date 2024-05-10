@@ -2,9 +2,9 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post, Comment
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
 from django.contrib import messages
-from django.views.generic import ListView
+from django.views.generic import ListView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
@@ -75,6 +75,7 @@ class PostDetail(View):
             },
         )
 
+
 class PostLike(View):
     
     def post(self, request, slug, *args, **kwargs):
@@ -87,8 +88,26 @@ class PostLike(View):
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
+
 class PostListView(generic.ListView, LoginRequiredMixin):
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "post_list.html"
     paginate_by = 6
+
+
+class AddPostView(LoginRequiredMixin, CreateView):
+    model = Post
+    template_name = 'add_post.html'
+    form_class = PostForm
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        form.instance.featured_image = self.request.FILES.get('featured_image')
+        form.instance.author_image = self.request.FILES.get('author_image')
+        form.save()
+        messages.success(self.request, 'Your post has been created')
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse_lazy('post_list')
