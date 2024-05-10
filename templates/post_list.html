@@ -1,20 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Views Part 1</title>
-</head>
+{% extends "base.html" %} 
+{% load static %}
+{% block content %}
 
-<body>
-    <h1>Posts list</h1>
-    {% for post in object_list %}
-    <h2>{{post.title}}</h2>
-    <p>{{post.excerpt}}</p>
-    <p>Author: {{post.author}}</p>
-    {% endfor %}
-</body>
-
-</html>
+<div class="container-fluid">
+  <div class="row">
+    <!-- Blog Entries Column -->
+    <div class="col-12 mt-3 left">
+      <div class="row">
+        {% for post in post_list %}
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card mb-4">
+            <div class="card-body">
+              <div class="image-container">
+                {% if "placeholder" in post.featured_image.url %}
+                <img style="width: 300px; height: 200px;"
+                  class="card-img-top" alt="placeholder image" 
+                  src="https://res.cloudinary.com/dsmcsccvu/image/upload/v1715331320/Motorcycle/20230608_172821_uykpjs.jpg">
+                {% else %}
+                <img style="width: 300px; height: 200px;"
+                  class="card-img-top" alt="placeholder image"
+                  src="{{post.featured_image.url}}">
+                {% endif %}
+                <div class="image-flash">
+                  <p class="author">Author: {{ post.author }}</p>
+                </div>
+              </div>
+              <a href="{% url 'post_detail' post.slug  %}" class="post-link">
+                <h2 class="card-title">{{ post.title }}</h2>
+                <p class="card-text">{{ post.excerpt }}</p>
+                <!-- Author image -->
+                {% if "placeholder" in post.author_image.url %}
+                <img class="author-img" alt="placeholder image" 
+                  src="https://res.cloudinary.com/dsmcsccvu/image/upload/v1715331500/Motorcycle/20180109_134158_ivco3x.jpg"
+                  >
+                {% else %}
+                <img class="author-img" alt="placeholder image"
+                  src="{{ post.author_image.url }}">
+                {% endif %}
+                <!-- Post details -->
+                <p class="card-text text-muted h6">
+                  {{ post.created_on}} -
+                  <i class="far fa-heart"></i> | {{post.number_of_likes }} |
+                </p>
+              </a>
+              
+              <!-- Edit and delete options -->
+              {% if user.is_authenticated and user == post.author %}
+              <div class="post-actions">
+                <small>
+                  <a class="edit" href="{% url 'update_post' post.pk %}">(Edit)</a>
+                  <a class="edit" href="{% url 'delete_post' post.pk %}">(Delete)</a>
+                </small>
+              </div>
+              
+              {% endif %}
+              <hr>
+            </div>
+          </div>
+        </div>
+        {% if forloop.counter|divisibleby:3 %}
+      </div>
+      <div class="row">{% endif %} {% endfor %}</div>
+    </div>
+  </div>
+  {% if is_paginated %}
+  <nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+      {% if page_obj.has_previous %}
+      <li>
+        <a href="?page={{ page_obj.previous_page_number }}" class="page-link" alt="previous page">&laquo; PREV</a>
+      </li>
+      {% endif %} {% if page_obj.has_next %}
+      <li>
+        <a href="?page={{ page_obj.next_page_number }}" class="page-link">NEXT &raquo;</a>
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
+  {% endif %}
+</div>
+{% endblock %}
