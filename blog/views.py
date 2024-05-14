@@ -104,8 +104,10 @@ class AddPostView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
-        form.instance.featured_image = self.request.FILES.get('featured_image')
-        form.instance.author_image = self.request.FILES.get('author_image')
+        if self.request.FILES.get('featured_image'):
+            form.instance.featured_image = self.request.FILES.get('featured_image')
+        if self.request.FILES.get('author_image'):
+            form.instance.author_image = self.request.FILES.get('author_image')
         form.save()
         messages.success(self.request, 'Your post has been created')
         return super().form_valid(form)

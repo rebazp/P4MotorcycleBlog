@@ -66,6 +66,12 @@ body {
     text-transform: uppercase;
 }
 
+.author-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+}
+
 .masthead {
     margin-top: 10px;
     overflow: hidden;

@@ -11,24 +11,44 @@
           <label for="id_title" class="col-sm-3 col-form-label">Title:</label>
           <div class="col-sm-5">
             {{ form.title }}
+            {% if form.title.errors %}
+              <div class="text-danger">
+                {{ form.title.errors }}
+              </div>
+            {% endif %}
           </div>
         </div>
         <div class="form-group row">
           <label id="text_input" for="id_body" class="col-sm-3 col-form-label">Text:</label>
           <div class="col-sm-5">
             {{ form.body }}
+            {% if form.body.errors %}
+              <div class="text-danger">
+                {{ form.body.errors }}
+              </div>
+            {% endif %}
           </div>
         </div>
         <div class="form-group row">
           <label for="id_featured_image" class="col-sm-3 col-form-label">Post Image:(optional)</label>
           <div class="col-sm-5">
             <input type="file" style="margin-bottom: 20px;" id="id_featured_image" name="featured_image">
+            {% if form.featured_image.errors %}
+              <div class="text-danger">
+                {{ form.featured_image.errors }}
+              </div>
+            {% endif %}
           </div>
         </div>
         <div class="form-group row">
           <label for="id_author_image" class="col-sm-3 col-form-label">Profile Image:(optional)</label>
           <div class="col-sm-5">
             <input type="file" id="id_author_image" name="author_image">
+            {% if form.author_image.errors %}
+              <div class="text-danger">
+                {{ form.author_image.errors }}
+              </div>
+            {% endif %}
           </div>
         </div>
         <div class="form-group row">
@@ -37,6 +57,11 @@
           </div>
         </div>
       </form>
+      {% if form.non_field_errors %}
+        <div class="alert alert-danger">
+          {{ form.non_field_errors }}
+        </div>
+      {% endif %}
     </div>
   </div>
 </div>
