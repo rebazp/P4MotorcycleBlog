@@ -102,7 +102,7 @@ body {
 
 .post-link {
     text-decoration: none;
-    color: #445261;
+    color: #ffff;
 }
 
 .post-link:hover,
@@ -117,7 +117,7 @@ body {
 
 .post-subtitle {
     margin-left: 5%;
-    color: lightgray;
+    color: #ffff;
 }
 
 .btn-signup {
