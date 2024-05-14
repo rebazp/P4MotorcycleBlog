@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect
 from .models import Post, Comment
 from .forms import CommentForm, PostForm
 from django.contrib import messages
-from django.views.generic import ListView, CreateView, UpdateView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 
@@ -133,3 +133,25 @@ class UpdatePostView(LoginRequiredMixin, UpdateView):
         form.instance.author_image = self.request.FILES.get('author_image')  
         messages.success(self.request, 'Your post has been updated')
         return super().form_valid(form)
+
+
+class DeletePostView(LoginRequiredMixin, DeleteView):
+    model = Post
+    template_name = 'delete_post.html'
+    success_url = reverse_lazy('post_list')
+
+
+    def dispatch(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        if self.object.author != self.request.user:
+            messages.error(self.request, 'You are not authorized to delete this post.)')
+            return HttpResponseRedirect(self.success_url)
+        return super().dispatch(request, *args, **kwargs)
+
+   
+    def delete(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        success_url = self.get_success_url()
+        self.object.delete()
+        messages.success(self.request, 'Your post has been deleted.')
+        return HttpResponseRedirect(success_url)
