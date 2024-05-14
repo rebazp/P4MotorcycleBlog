@@ -21,6 +21,10 @@ body {
     background-color: #034078;
 }
 
+.footer .fab {
+    color: white;
+}
+
 .main-bg {
     background-color: #ffff;
 }
