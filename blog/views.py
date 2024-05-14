@@ -7,6 +7,7 @@ from django.contrib import messages
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
+from django.contrib.auth import login, authenticate
 
 
 """
@@ -223,6 +224,27 @@ class DeleteCommentView(LoginRequiredMixin, DeleteView):
         return HttpResponseRedirect(success_url)
 
     
+def custom_login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        remember = request.POST.get('remember')  
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            if remember:
+                request.session.set_expiry(86400 * 7) 
+            else:
+                request.session.set_expiry(0)  
+            messages.success(request, 'You have successfully logged in.')
+            return redirect('home') 
+        else:
+            messages.error(request, 'Invalid username or password')
+            return redirect('account_login') 
+    else:
+        return render(request, 'login.html')
+
+
 def custom_handler404(request, exception):
     
     return render(request, '404.html', status=404)
