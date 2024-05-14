@@ -6,7 +6,7 @@ body {
     font-family: Lato, sans-serif;
     font-size: 1.8rem;
     font-weight: 888;
-    color: #034078;
+    color: #ffff;
 }
 
 .thin {
@@ -153,4 +153,16 @@ body {
     color: #001F54;
     background: transparent;
     border: none;
+}
+
+.container-fluid {
+    background-color: #034078;
+}
+
+#navbarText .nav-link {
+    color: #ffff;
+}
+
+#navbarText .nav-link:hover {
+    color: #1282A2;    
 }
