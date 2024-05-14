@@ -1,0 +1,26 @@
+{% extends 'base.html' %} 
+{% block content %}
+
+<div class="container">
+  <h1>Edit your comment</h1>
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %} 
+    {{ form.as_p }}
+    <div class="col-md-4 card mb-4 mt-3">
+      <div class="card-body">
+        <!-- For later -->
+        {% if commented %}
+        {% else %} 
+          {% if user.is_authenticated %}
+            <h3>Leave a comment:</h3>
+            <p>Posting as: {{ user.username }}</p>
+              {{ comment_form }}
+              {% csrf_token %}
+              <button class="btn btn-signup right btn-lg" type="submit">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+{% endif %}
+{% endif %}
+{% endblock %}

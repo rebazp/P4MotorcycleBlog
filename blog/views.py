@@ -155,3 +155,46 @@ class DeletePostView(LoginRequiredMixin, DeleteView):
         self.object.delete()
         messages.success(self.request, 'Your post has been deleted.')
         return HttpResponseRedirect(success_url)
+
+
+class UpdateCommentView(LoginRequiredMixin, UpdateView):
+    model = Comment
+    template_name = 'update_comment.html'
+    fields = ['body']
+    
+    def get_success_url(self):
+        return reverse_lazy('post_detail', kwargs={'slug': self.object.post.slug})
+
+    def dispatch(self, request, *args, **kwargs):
+        self.object = self.get_object()
+       
+        if self.object.user != self.request.user:
+            messages.error(self.request, 'You are not authorized to update this comment.')
+            return HttpResponseRedirect(self.success_url)
+        return super().dispatch(request, *args, **kwargs)
+
+    def form_valid(self, form):
+        messages.success(self.request, 'Your comment has been updated.')
+        return super().form_valid(form)
+
+
+def custom_login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        remember = request.POST.get('remember')  
+
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            if remember:
+                request.session.set_expiry(86400 * 7) 
+            else:
+                request.session.set_expiry(0)  
+            messages.success(request, 'You have successfully logged in.')
+            return redirect('home') 
+        else:
+            messages.error(request, 'Invalid username or password')
+            return redirect('account_login') 
+    else:
+        return render(request, 'login.html')
