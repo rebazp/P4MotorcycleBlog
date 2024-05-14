@@ -46,7 +46,7 @@ body {
 
 .image-block {
     width: 300px;
-    height: 200px;
+    height: 350px;
     background-image: url('https://res.cloudinary.com/dsmcsccvu/image/upload/v1715371553/Motorcycle/crop_zjjoyp.jpg');
     background-size: cover;
     background-position: center;
