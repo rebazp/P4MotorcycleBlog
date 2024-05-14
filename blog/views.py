@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404
 from .models import Post, Comment
 from .forms import CommentForm, PostForm
 from django.contrib import messages
@@ -220,4 +220,13 @@ class DeleteCommentView(LoginRequiredMixin, DeleteView):
         messages.success(self.request, 'Your comment has been deleted.')
         return HttpResponseRedirect(success_url)
 
+    
+def custom_handler404(request, exception):
+    
+    return render(request, '404.html', status=404)
+
+
+def custom_handler500(request):
+    
+    return render(request, '500.html', status=500)
     
