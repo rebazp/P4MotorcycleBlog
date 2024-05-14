@@ -30,31 +30,26 @@ body {
     background-color: transparent;
 }
 
-.image-container {
-    position: relative;
-}
-
 .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-}
-
-.image-block {
-    width: 300px;
-    height: 150px;
-    background-image: url('https://res.cloudinary.com/dsmcsccvu/image/upload/v1715371553/Motorcycle/crop_zjjoyp.jpg');
-    background-size: cover;
-    background-position: center;
-    margin-bottom: 20px;
+    height: 100vh;
+    margin-top: 0;
 }
 
 .text-block {
     text-align: center;
-    padding: 20px;
-    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.image-block {
+    width: 300px;
+    height: 200px;
+    background-image: url('https://res.cloudinary.com/dsmcsccvu/image/upload/v1715371553/Motorcycle/crop_zjjoyp.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .image-flash {
