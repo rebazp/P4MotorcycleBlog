@@ -107,10 +107,8 @@ class AddPostView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
-        if self.request.FILES.get('featured_image'):
-            form.instance.featured_image = self.request.FILES.get('featured_image')
-        if self.request.FILES.get('author_image'):
-            form.instance.author_image = self.request.FILES.get('author_image')
+        form.instance.featured_image = self.request.FILES.get('featured_image')
+        form.instance.author_image = self.request.FILES.get('author_image')
         form.save()
         messages.success(self.request, 'Your post has been created')
         return super().form_valid(form)
@@ -128,7 +126,7 @@ class UpdatePostView(LoginRequiredMixin, UpdateView):
     def dispatch(self, request, *args, **kwargs):
         self.object = self.get_object()
         if self.object.author != self.request.user:
-            messages.error(self.request, 'You are not authorized to update this post.')
+            messages.error(self.request, 'Sorry, you are not authorized to update this post.')
             return HttpResponseRedirect(self.success_url)
         return super().dispatch(request, *args, **kwargs)
 
@@ -186,8 +184,7 @@ def custom_login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
-        remember = request.POST.get('remember')  
-
+        remember = request.POST.get('remember')
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)

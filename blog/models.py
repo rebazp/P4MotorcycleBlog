@@ -21,7 +21,7 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0)
+    status = models.IntegerField(choices=STATUS, default=1)
     likes = models.ManyToManyField(
         User, related_name='blogpost_like', blank=True)
 
@@ -48,10 +48,11 @@ class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE,
                              related_name="comments")
     name = models.CharField(max_length=80)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
     email = models.EmailField()
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
-    approved = models.BooleanField(default=False)
+    approved = models.BooleanField(default=True)
 
     class Meta:
         ordering = ["created_on"]
