@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect, Http404
 from .models import Post, Comment
 from .forms import CommentForm, PostForm
 from django.contrib import messages
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import CreateView, UpdateView, DeleteView, ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.contrib.auth import login, authenticate
@@ -61,6 +61,7 @@ class PostDetail(View):
             comment_form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
             comment.post = post
+            comment.user = request.user
             comment.save()
             messages.success(request, 'Your comment has been added!')
         else:
