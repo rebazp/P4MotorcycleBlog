@@ -4,6 +4,7 @@
 <html lang="en" class="h-100">
 <head>
     <title>Motorcycle Blog</title>
+    <!-- Link to Fonts, bootstrap and stylesheets-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
@@ -20,20 +21,24 @@
 
 <body class="d-flex flex-column h-100 main-bg">
 
-    <!-- Navigation -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
+            <!-- Brand logo and name -->
             <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">MOTORCYCLE<span
                         class="thin">|BLOG</span></span></a>
+            <!-- Toggle button for collapsing the navbar on small screens -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <!-- Navbar links and options -->
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
+                    <!-- Conditional links based on user authentication status -->
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
@@ -57,7 +62,7 @@
         </div>
     </nav>
 
-    <!-- CRUD alert messages -->
+    <!-- Container for displaying CRUD alert messages -->
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
@@ -71,9 +76,9 @@
         </div>
     </div>
 
+    <!-- Main content area -->
     <main class="flex-shrink-0 main-bg">
         {% block content %}
-        <!-- Content Goes here -->
         {% endblock content %}
     </main>
 
@@ -87,7 +92,7 @@
         </p>
     </footer>
 
-    <!-- CRUD message delay -->
+    <!-- JavaScript to automatically close alert messages after a delay -->
     <script>
         setTimeout(function () {
             let messages = document.getElementById('msg');
