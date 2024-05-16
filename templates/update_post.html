@@ -2,36 +2,50 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<!-- Container for the edit post form -->
 <div class="container">
+   <!-- Row to center the form -->
   <div class="row justify-content-center">
+    <!-- Column for the form -->
     <div class="col-md-8">
+      <!-- Heading for the form -->
       <h1 class="text-center">Edit your post</h1>
+      <!-- Form for editing the post -->
       <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
+        <!-- Form group for the post title -->
         <div class="form-group row">
           <label for="id_title" class="col-sm-3 col-form-label">Title:</label>
           <div class="col-sm-5">
+            <!-- Input field for the post title -->
             {{ form.title }}
           </div>
         </div>
+        <!-- Form group for the post body -->
         <div class="form-group row">
           <label id="text_input" for="id_body" class="col-sm-3 col-form-label">Text:</label>
           <div class="col-sm-5">
+            <!-- Text area for the post body -->
             {{ form.body }}
           </div>
         </div>
+        <!-- Form group for the post image -->
         <div class="form-group row">
           <label for="id_featured_image" class="col-sm-3 col-form-label">Post Image:(optional)</label>
           <div class="col-sm-5">
+            <!-- Input field for uploading the post image -->
             <input type="file" style="margin-bottom: 20px;" id="id_featured_image" name="featured_image">
           </div>
         </div>
+        <!-- Form group for the author image -->
         <div class="form-group row">
           <label for="id_author_image" class="col-sm-3 col-form-label">Profile Image:(optional)</label>
           <div class="col-sm-5">
+            <!-- Input field for uploading the author image -->
             <input type="file" id="id_author_image" name="author_image">
           </div>
         </div>
+        <!-- Button to submit the form -->
         <div class="form-group row">
           <div class="col-sm-5 offset-sm-3">
             <button style="margin-top: 20px;" class="btn btn-signup right btn-lg" type="submit">Post</button>
@@ -41,4 +55,5 @@
     </div>
   </div>
 </div>
+
 {% endblock %}

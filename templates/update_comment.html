@@ -8,7 +8,6 @@
     {{ form.as_p }}
     <div class="col-md-4 card mb-4 mt-3">
       <div class="card-body">
-        <!-- For later -->
         {% if commented %}
         {% else %} 
           {% if user.is_authenticated %}
@@ -21,6 +20,7 @@
     </div>
   </form>
 </div>
+
 {% endif %}
 {% endif %}
 {% endblock %}
