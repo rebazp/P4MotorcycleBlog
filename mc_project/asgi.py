@@ -1,5 +1,5 @@
 """
-ASGI config for mc_project project.
+ASGI config for Motorcycle Blog project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
