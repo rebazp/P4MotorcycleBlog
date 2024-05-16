@@ -1,24 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Post</title>
-</head>
-<body>
-
+<!-- Extends the base template -->
 {% extends 'base.html' %}
+<!-- Main content block -->
 {% block content %}
+
+<!-- Container for the form content -->
 <div class="container">
   <div class="row justify-content-center">
+    <!-- Form column centered on the page -->
     <div class="col-md-8">
       <h1 class="text-center">Add a post</h1>
+      <!-- Form for adding a post -->
       <form method="POST" enctype="multipart/form-data">
+        <!-- CSRF protection token -->
         {% csrf_token %}
+        <!-- Form group for title input -->
         <div class="form-group row">
           <label for="id_title" class="col-sm-3 col-form-label">Title:</label>
           <div class="col-sm-5">
+            <!-- Title input field -->
             {{ form.title }}
+            <!-- Display errors for title input if any -->
             {% if form.title.errors %}
               <div class="text-danger">
                 {{ form.title.errors }}
@@ -26,10 +27,13 @@
             {% endif %}
           </div>
         </div>
+        <!-- Form group for body input -->
         <div class="form-group row">
           <label id="text_input" for="id_body" class="col-sm-3 col-form-label">Text:</label>
           <div class="col-sm-5">
+            <!-- Body input field -->
             {{ form.body }}
+            <!-- Display errors for body input if any -->
             {% if form.body.errors %}
               <div class="text-danger">
                 {{ form.body.errors }}
@@ -37,10 +41,13 @@
             {% endif %}
           </div>
         </div>
+        <!-- Form group for featured image input -->
         <div class="form-group row">
           <label for="id_featured_image" class="col-sm-3 col-form-label">Post Image:(optional)</label>
           <div class="col-sm-5">
+            <!-- Featured image input field -->
             <input type="file" style="margin-bottom: 20px;" id="id_featured_image" name="featured_image">
+            <!-- Display errors for featured image input if any -->
             {% if form.featured_image.errors %}
               <div class="text-danger">
                 {{ form.featured_image.errors }}
@@ -48,10 +55,13 @@
             {% endif %}
           </div>
         </div>
+        <!-- Form group for author image input -->
         <div class="form-group row">
           <label for="id_author_image" class="col-sm-3 col-form-label">Profile Image:(optional)</label>
           <div class="col-sm-5">
+            <!-- Author image input field -->
             <input type="file" id="id_author_image" name="author_image">
+            <!-- Display errors for author image input if any -->
             {% if form.author_image.errors %}
               <div class="text-danger">
                 {{ form.author_image.errors }}
@@ -59,12 +69,15 @@
             {% endif %}
           </div>
         </div>
+        <!-- Form group for submit button -->
         <div class="form-group row">
           <div class="col-sm-5 offset-sm-3">
+            <!-- Submit button for the form -->
             <button style="margin-top: 20px;" class="btn btn-signup right btn-lg" type="submit">Post</button>
           </div>
         </div>
       </form>
+      <!-- Display non-field errors if any -->
       {% if form.non_field_errors %}
         <div class="alert alert-danger">
           {{ form.non_field_errors }}
@@ -73,6 +86,9 @@
     </div>
   </div>
 </div>
+
+<!-- End of the content block -->
 {% endblock %}
+
 </body>
 </html>
