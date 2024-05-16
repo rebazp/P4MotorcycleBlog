@@ -12,8 +12,8 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = ['title', 'body', 'featured_image', 'author_image',]
 
-    def _init_(self, *args, **kwargs):
-        super()._init_(*args, **kwargs)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.fields['title'].required = True
         self.fields['body'].required = True
         self.fields['featured_image'].required = False

@@ -14,9 +14,10 @@
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
+                <img src="https://res.cloudinary.com/dsmcsccvu/image/upload/v1707579541/samples/man-portrait.jpg" width="100%" alt="the placeholder image">
+                
                 {% else %}
-                <img src=" {{ post.featured_image.url }}" width="100%">
+                <img src=" {{ post.featured_image.url }}" width="100%" alt="the featured image">
                 {% endif %}
             </div>
         </div>
@@ -29,11 +30,8 @@
             <div class="card-body">
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
-                <p class="card-text ">
-                    {{ post.content | safe }}
-                </p>
+                <p class="card-text">{{ post.body | safe }}</p>
                 <div class="row">
-
                     <div class="col-1">
                         <strong>
                             {% if user.is_authenticated %}
@@ -44,7 +42,6 @@
                                 {% else %}
                                 <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
                                 {% endif %}
-
                             </form>
                             {% else %}
                             <span class="text-secondary"><i class="far fa-heart"></i></span>
@@ -87,6 +84,14 @@
                     <!-- The body of the comment goes before the | -->
                     {{ comment.body | linebreaks }}
                 </div>
+                {% if user.is_authenticated and user == comment.user %}
+                <div class="comment_actions">
+                  <small>
+                    <a class="edit" href="{% url 'comment_delete' comment.pk %}">(Delete)</a>
+                    <a class="edit" href="{% url 'update_comment' comment.pk %}">(Edit)</a>
+                    </small>
+                </div>
+                {% endif %}
                 <!-- Our for loop ends here -->
                 {% endfor %}
             </div>
