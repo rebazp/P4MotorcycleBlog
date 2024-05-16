@@ -32,6 +32,7 @@ class CommentAdmin(admin.ModelAdmin):
     def approve_comments(self, request, queryset): # Action to approve selected comments
         queryset.update(approved=True)
 
+
 # The code in this file is inspired from:
 # My own previous projects and knowledge
 # Code Institute, I think therefore i blog project
