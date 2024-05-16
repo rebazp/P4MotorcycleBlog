@@ -7,6 +7,7 @@
 </head>
 <body>
 
+<!-- Link to Fonts, bootstrap and stylesheets-->
 {% load static %}
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
@@ -20,10 +21,8 @@
     </script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% block content %}
-  
 
-<!-- navbar_error.html -->
-
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-black">
   <div class="container-fluid">
       <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">MOTORCYCLE<span class="red-o"></span><span
@@ -52,10 +51,8 @@
       </div>
     </div>
     {% endblock %}
-    <!-- Navigation -->
 
-
-    <!-- Footer -->
+<!-- Footer -->
 <footer class="footer mt-auto py-3 dark-bg btn-lg">
     <p class="m-0 text-center text-white">Follow us:
         <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square ms-3"></i></a>
@@ -75,3 +72,13 @@
 </script>
 </body>
 </html>
+
+
+# The code in this file is inspired from:
+# My own previous projects and knowledge
+# Code Institute, I think therefore i blog project
+# Python Django Web Framework (https://www.djangoproject.com/start/overview/)
+# Youtube Django Tutorial by [Freecode camp](https://www.youtube.com/watch?v=F5mRW0jo-U4)
+# Youtube series Django Tutorial by [Net Ninja](https://www.youtube.com/watch?v=n-FTlQ7Djqc&list=PL4cUxeGkcC9ib4HsrXEYpQnTOTZE1x0uc&index=1&ab_channel=NetNinja)
+# Youtube series Python Django Tutorial by [Corey Schafer](https://www.youtube.com/watch?v=UmljXZIypDc&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=1&ab_channel=CoreySchafer)
+# Yoube Python Django Web Framework by [FreeCodeCamp](https://www.youtube.com/watch?v=F5mRW0jo-U4&ab_channel=freeCodeCamp.org)
