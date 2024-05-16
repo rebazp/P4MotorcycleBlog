@@ -11,9 +11,8 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 
 
-"""
-These are the views and functions that are avilable on specific pages in the blog.
-"""
+# These are the views and functions that are avilable on specific pages in the blog.
+# View for listing blog posts
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
@@ -21,6 +20,7 @@ class PostList(generic.ListView):
     paginate_by = 6
 
 
+# View for displaying a single post with its details and comments
 class PostDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
@@ -46,16 +46,17 @@ class PostDetail(View):
     
     def post(self, request, slug, *args, **kwargs):
 
-        queryset = Post.objects.filter(status=1)
+        queryset = Post.objects.filter(status=1) # Get the post based on the slug
         post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.filter(approved=True).order_by("-created_on")
+        comments = post.comments.filter(approved=True).order_by("-created_on") # Get approved comments for the post
         liked = False
 
-        if post.likes.filter(id=self.request.user.id).exists():
+        if post.likes.filter(id=self.request.user.id).exists(): # Check if the post is liked by the current user
             liked = True
 
         comment_form = CommentForm(data=request.POST)
 
+        # Validate the comment form and set fields for the comment
         if comment_form.is_valid():
             comment_form.instance.email = request.user.email
             comment_form.instance.name = request.user.username
@@ -80,12 +81,13 @@ class PostDetail(View):
         )
 
 
+# View for handling likes on a post
 class PostLike(View):
     
     def post(self, request, slug, *args, **kwargs):
-        post = get_object_or_404(Post, slug=slug)
+        post = get_object_or_404(Post, slug=slug) # Get the post based on the slug
 
-        if post.likes.filter(id=request.user.id).exists():
+        if post.likes.filter(id=request.user.id).exists(): # Toggle the like status for the current user
             post.likes.remove(request.user)
         else:
             post.likes.add(request.user)
@@ -93,6 +95,7 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
+# View for listing posts, requires user to be logged in
 class PostListView(generic.ListView, LoginRequiredMixin):
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
@@ -100,13 +103,14 @@ class PostListView(generic.ListView, LoginRequiredMixin):
     paginate_by = 6
 
 
+# View for adding a new post, requires user to be logged in
 class AddPostView(LoginRequiredMixin, CreateView):
     model = Post
     template_name = 'add_post.html'
     form_class = PostForm
 
     def form_valid(self, form):
-        form.instance.author = self.request.user
+        form.instance.author = self.request.user # Set the author and images for the post
         form.instance.featured_image = self.request.FILES.get('featured_image')
         form.instance.author_image = self.request.FILES.get('author_image')
         form.save()
@@ -117,6 +121,7 @@ class AddPostView(LoginRequiredMixin, CreateView):
         return reverse_lazy('post_list')
 
 
+# View for updating an existing post, requires user to be logged in
 class UpdatePostView(LoginRequiredMixin, UpdateView):
     model = Post
     template_name = 'update_post.html'
@@ -125,19 +130,20 @@ class UpdatePostView(LoginRequiredMixin, UpdateView):
 
     def dispatch(self, request, *args, **kwargs):
         self.object = self.get_object()
-        if self.object.author != self.request.user:
+        if self.object.author != self.request.user: # Ensure the user is the author of the post
             messages.error(self.request, 'Sorry, you are not authorized to update this post.')
             return HttpResponseRedirect(self.success_url)
         return super().dispatch(request, *args, **kwargs)
 
     def form_valid(self, form):
-        form.instance.author = self.request.user
+        form.instance.author = self.request.user # Update the author and images for the post
         form.instance.featured_image = self.request.FILES.get('featured_image')  
         form.instance.author_image = self.request.FILES.get('author_image')  
         messages.success(self.request, 'Your post has been updated')
         return super().form_valid(form)
 
 
+# View for deleting a post, requires user to be logged in
 class DeletePostView(LoginRequiredMixin, DeleteView):
     model = Post
     template_name = 'delete_post.html'
@@ -145,7 +151,7 @@ class DeletePostView(LoginRequiredMixin, DeleteView):
 
     def dispatch(self, request, *args, **kwargs):
         self.object = self.get_object()
-        if self.object.author != self.request.user:
+        if self.object.author != self.request.user: # Ensure the user is the author of the post
             messages.error(self.request, 'You are not authorized to delete this post.)')
             return HttpResponseRedirect(self.success_url)
         return super().dispatch(request, *args, **kwargs)
@@ -159,6 +165,7 @@ class DeletePostView(LoginRequiredMixin, DeleteView):
         return HttpResponseRedirect(success_url)
 
 
+# View for updating a comment, requires user to be logged in
 class UpdateCommentView(LoginRequiredMixin, UpdateView):
     model = Comment
     template_name = 'update_comment.html'
@@ -170,7 +177,7 @@ class UpdateCommentView(LoginRequiredMixin, UpdateView):
     def dispatch(self, request, *args, **kwargs):
         self.object = self.get_object()
        
-        if self.object.user != self.request.user:
+        if self.object.user != self.request.user: # Ensure the user is the author of the comment
             messages.error(self.request, 'You are not authorized to update this comment.')
             return HttpResponseRedirect(self.success_url)
         return super().dispatch(request, *args, **kwargs)
@@ -180,6 +187,7 @@ class UpdateCommentView(LoginRequiredMixin, UpdateView):
         return super().form_valid(form)
 
 
+# Custom login view to handle user authentication
 def custom_login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -188,10 +196,10 @@ def custom_login(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            if remember:
-                request.session.set_expiry(86400 * 7) 
+            if remember: # Set session expiry based on 'remember me' option
+                request.session.set_expiry(86400 * 7) # 1 week
             else:
-                request.session.set_expiry(0)  
+                request.session.set_expiry(0) # Browser session
             messages.success(request, 'You have successfully logged in.')
             return redirect('home') 
         else:
@@ -201,6 +209,7 @@ def custom_login(request):
         return render(request, 'login.html')
 
 
+# View for deleting a comment, requires user to be logged in
 class DeleteCommentView(LoginRequiredMixin, DeleteView):
     model = Comment
     template_name = 'comment_delete.html'
@@ -210,7 +219,7 @@ class DeleteCommentView(LoginRequiredMixin, DeleteView):
 
     def dispatch(self, request, *args, **kwargs):
         comment = self.get_object()
-        if comment.user != self.request.user:
+        if comment.user != self.request.user: # Ensure the user is the author of the comment
             messages.error(self.request, 'You are not authorized to delete this comment.')
             return HttpResponseRedirect(self.success_url)
         return super().dispatch(request, *args, **kwargs)
@@ -223,33 +232,45 @@ class DeleteCommentView(LoginRequiredMixin, DeleteView):
         return HttpResponseRedirect(success_url)
 
     
+# Custom login view to handle user authentication
 def custom_login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
-        remember = request.POST.get('remember')  
+        remember = request.POST.get('remember')
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            if remember:
-                request.session.set_expiry(86400 * 7) 
+            if remember: # Set session expiry based on 'remember me' option
+                request.session.set_expiry(86400 * 7) # 1 week
             else:
-                request.session.set_expiry(0)  
+                request.session.set_expiry(0) # Browser session
             messages.success(request, 'You have successfully logged in.')
-            return redirect('home') 
+            return redirect('home')
         else:
             messages.error(request, 'Invalid username or password')
-            return redirect('account_login') 
+            return redirect('account_login')
     else:
         return render(request, 'login.html')
 
 
+# Custom 404 error handler
 def custom_handler404(request, exception):
     
     return render(request, '404.html', status=404)
 
 
+# Custom 500 error handler
 def custom_handler500(request):
     
     return render(request, '500.html', status=500)
-    
+
+
+# The code in this file is inspired from:
+# My own previous projects and knowledge
+# Code Institute, I think therefore i blog project
+# Python Django Web Framework (https://www.djangoproject.com/start/overview/)
+# Youtube Django Tutorial by [Freecode camp](https://www.youtube.com/watch?v=F5mRW0jo-U4)
+# Youtube series Django Tutorial by [Net Ninja](https://www.youtube.com/watch?v=n-FTlQ7Djqc&list=PL4cUxeGkcC9ib4HsrXEYpQnTOTZE1x0uc&index=1&ab_channel=NetNinja)
+# Youtube series Python Django Tutorial by [Corey Schafer](https://www.youtube.com/watch?v=UmljXZIypDc&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=1&ab_channel=CoreySchafer)
+# Yoube Python Django Web Framework by [FreeCodeCamp](https://www.youtube.com/watch?v=F5mRW0jo-U4&ab_channel=freeCodeCamp.org)
