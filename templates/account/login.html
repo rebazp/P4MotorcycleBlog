@@ -1,10 +1,9 @@
 {% extends "base.html" %}
-
 {% load i18n %}
-
 {% load account socialaccount %}
-
-{% block head_title %}{% trans "Login" %}{% endblock %}
+{% block head_title %}
+{% trans "Login" %}
+{% endblock %}
 {% block content %}
 
 <div class="container">
@@ -38,4 +37,5 @@
       </div>
     </div>
   </div>
+  
 {% endblock %}
