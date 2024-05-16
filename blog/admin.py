@@ -33,6 +33,7 @@ class CommentAdmin(admin.ModelAdmin):
         queryset.update(approved=True)
 
 # The code in this file is inspired from:
+# My own previous projects and knowledge
 # Code Institute, I think therefore i blog project
 # Youtube series Django Tutorial by [Net Ninja](https://www.youtube.com/watch?v=n-FTlQ7Djqc&list=PL4cUxeGkcC9ib4HsrXEYpQnTOTZE1x0uc&index=1&ab_channel=NetNinja)
 # Youtube series Python Django Tutorial by [Corey Schafer](https://www.youtube.com/watch?v=UmljXZIypDc&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=1&ab_channel=CoreySchafer)
