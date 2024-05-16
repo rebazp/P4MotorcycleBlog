@@ -1,17 +1,22 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 {% load static %}
 {% block content %}
 
+<!-- Container for the entire page content -->
 <div class="container-fluid">
   <div class="row">
-    <!-- Blog Entries Column -->
+    <!-- Column to hold the list of posts -->
     <div class="col-12 mt-3 left">
       <div class="row">
+        <!-- Loop through each post in the post list -->
         {% for post in post_list %}
         <div class="col-lg-4 col-md-6 mb-4">
+          <!-- Card for each post -->
           <div class="card mb-4">
             <div class="card-body">
+              <!-- Container for the post image and author info -->
               <div class="image-container">
+                <!-- Check if the post has a placeholder image -->
                 {% if "placeholder" in post.featured_image.url %}
                 <img style="width: 300px; height: 200px;"
                   class="card-img-top" alt="placeholder image" 
@@ -21,14 +26,18 @@
                   class="card-img-top" alt="placeholder image"
                   src="{{post.featured_image.url}}">
                 {% endif %}
+                <!-- Author info overlay on the image -->
                 <div class="image-flash">
                   <p class="author">Author: {{ post.author }}</p>
                 </div>
               </div>
+              <!-- Link to the post detail page -->
               <a href="{% url 'post_detail' post.slug  %}" class="post-link">
+                <!-- Post title -->
                 <h2 class="card-title">{{ post.title }}</h2>
+                <!-- Post excerpt -->
                 <p class="card-text">{{ post.excerpt }}</p>
-                <!-- Author image -->
+                <!-- Check if the author image is a placeholder -->
                 {% if "placeholder" in post.author_image.url %}
                 <img class="author-img" alt="placeholder image" 
                   src="https://res.cloudinary.com/dsmcsccvu/image/upload/v1715331500/Motorcycle/20180109_134158_ivco3x.jpg"
@@ -37,14 +46,13 @@
                 <img class="author-img" alt="placeholder image"
                   src="{{ post.author_image.url }}">
                 {% endif %}
-                <!-- Post details -->
+                <!-- Post metadata -->
                 <p class="card-text text-muted h6">
                   {{ post.created_on}} -
                   <i class="far fa-heart"></i> | {{post.number_of_likes }} |
                 </p>
               </a>
-              
-              <!-- Edit and delete options -->
+              <!-- Edit and delete options for authenticated users who are the post author -->
               {% if user.is_authenticated and user == post.author %}
               <div class="post-actions">
                 <small>
@@ -52,26 +60,30 @@
                   <a class="edit" href="{% url 'delete_post' post.pk %}">(Delete)</a>
                 </small>
               </div>
-              
               {% endif %}
               <br>
               <br>
             </div>
           </div>
         </div>
+        <!-- Create a new row after every third post -->
         {% if forloop.counter|divisibleby:3 %}
       </div>
       <div class="row">{% endif %} {% endfor %}</div>
     </div>
   </div>
+  <!-- Pagination controls -->
   {% if is_paginated %}
   <nav aria-label="Page navigation">
     <ul class="pagination justify-content-center">
+      <!-- Link to the previous page if available -->
       {% if page_obj.has_previous %}
       <li>
         <a href="?page={{ page_obj.previous_page_number }}" class="page-link" alt="previous page">&laquo; PREV</a>
       </li>
-      {% endif %} {% if page_obj.has_next %}
+      {% endif %}
+      <!-- Link to the next page if available -->
+      {% if page_obj.has_next %}
       <li>
         <a href="?page={{ page_obj.next_page_number }}" class="page-link">NEXT &raquo;</a>
       </li>
