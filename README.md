@@ -6,7 +6,7 @@ This simple and easy to use blog is for the creator and users to share memories.
 
 ![Home Screen](media/images/responsive.jpg)
 
-[View Rebaz Travel Blog Live Website Here]()
+[View Rebaz Motorcycle Blog Live Website Here]()
 ---
 
 ## Table of Contents
@@ -56,13 +56,20 @@ The goal with this project is to share motorcycle pictures and memories through 
 
 ### Agile Methodology
 
-Agile Methodology was used to help prioritize and organize tasks, writting the user stories and using project boards on github. Template was created to help write user stories and epics.
+Agile Methodology was used to help prioritize and organize tasks, writing the user stories and using project boards on github. Template was created to help write user stories and epics.
 
 * Epics were written containing possible user stories and based on that the blog was made.
 * User stories were created by looking at epics and through iterations the project was advancing.
 * Project board is set to public.
 * Project board was used to track progression of the task through the todo, in progress and done columns.
 * Labels were added to sort the issues based on the importance.
+
+<details>
+<summary> Epic Template
+</summary>
+
+![Epic Template](media/images/epictemplate.jpg)
+</details>
 
 <details>
 <summary> User Stories Template
@@ -84,8 +91,6 @@ Agile Methodology was used to help prioritize and organize tasks, writting the u
 
 ![Project Board](media/images/projectboard.jpg)
 </details>
-
-### User Stories
 
 #### Epics
 1. User interaction with posts
@@ -139,21 +144,23 @@ Detailed look can be found in the [Project Board](https://github.com/users/rebaz
 * Easy Registration process.
 * Simple to use on any device.
 
+
 ### Registered User
 
 * Seamless login process with a secure and personalized user account.
 * Browsing through posts and see related comments.
 * Give comments and likes.
+* Option to log out.
 
 ### Admin User
 
 * Secure and separate login portal for admin users with appropriate access control.
-* Access to an admin dashboard for managing users, posts, comments and likes.
-* Ability to add, edit, or delete user, posts, comments likes.
+* Access to an admin dashboard for managing users, posts and comments
+* Ability to add, edit, or delete user, posts and comments.
 
 ## Design
 
-The blog is easy to read and navigate through. The navbar contains the links to guide the user through the blog. The footer is visible and connects the readers to social media.
+The blog is easy to read and navigate through. The navbar contains the links to guide the user through the blog. The footer is visible and connects the user to social media.
 
 ### Color Scheme
 
