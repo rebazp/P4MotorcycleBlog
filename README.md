@@ -189,3 +189,7 @@ All images used in these blog posts are my own.
     * Only Admin can change the data in the backend.
     * Tools to be used in comments are: post, name, user, email, body, created-on, approved and id.
     * Full CRUD functionality is available to the user.
+
+### User Journey 
+
+![User Journey]()
