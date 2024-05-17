@@ -4,9 +4,9 @@ Join Rebaz and his passion for motorcycles in this amazing blog where he and his
 This Django based blog allows users to create their own account so that they can leave blog posts, comments and likes. 
 This simple and easy to use blog is for the creator and users to share memories.
 
-![Home Screen](accounts/static/images/responsive.jpg)
+![Home Screen](media/images/responsive.jpg)
 
-[View Rebaz Travel Blog Live Website Here](https://rebazptravelblog-3e0a8b8b8d3b.herokuapp.com/)
+[View Rebaz Travel Blog Live Website Here]()
 ---
 
 ## Table of Contents
