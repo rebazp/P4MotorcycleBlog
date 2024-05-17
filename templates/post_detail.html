@@ -17,9 +17,9 @@
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- Display the featured image if it exists, otherwise display a placeholder image -->
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="https://res.cloudinary.com/dsmcsccvu/image/upload/v1707579541/samples/man-portrait.jpg" width="100%" alt="the placeholder image">
+                <img src="https://res.cloudinary.com/dsmcsccvu/image/upload/v1715955544/Motorcycle/profile_a7a9x2.webp" width="100%" alt="the placeholder image">
                 {% else %}
-                <img src=" {{ post.featured_image.url }}" width="100%" alt="the featured image">
+                <img src="{{ post.featured_image.url }}" width="100%" alt="the featured image">
                 {% endif %}
             </div>
         </div>
