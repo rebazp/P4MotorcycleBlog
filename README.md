@@ -64,3 +64,67 @@ Agile Methodology was used to help prioritize and organize tasks, writting the u
 * Project board is set to public.
 * Project board was used to track progression of the task through the todo, in progress and done columns.
 * Labels were added to sort the issues based on the importance.
+
+<details>
+<summary> User Stories Template
+</summary>
+
+![User Stories Template](media/images/userstorytemplate.jpg)
+</details>
+
+<details>
+<summary> User Stories, Issues
+</summary>
+
+![User Stories, Issues](media/images/userstoriesissues.jpg)
+</details>
+
+<details>
+<summary> Project Board
+</summary>
+
+![Project Board](media/images/projectboard.jpg)
+</details>
+
+### User Stories
+
+#### Epics
+1. User interaction with posts
+2. User engagement with content
+3. Account management
+4. Content creation and management
+5. Deployment
+
+#### User Stories
+1. View post list
+* Given more than one post in the database, these multiple posts are listed
+* When a user opens the main page a list of posts is seen
+* Then the user sees all post titles with pagination to choose what to read
+2. Open a post
+* When a blog post title is clicked a detailed view of the post is seen
+3. View comments
+* Given one or more comments the user and admin can view them
+* A site user can click on the comment thread to read the conversation
+4. Account registration
+* Given an username and password a user can register an account
+* The user can log in
+* When the user is logged in they can add post and comment posts
+5. Comment on post
+* User can comment on posts
+* User can reply the comments
+6. Modify and delete comment on a post
+* A logged in user can modify and delete their comment
+7. Manage posts
+* Admin and users can create, read, update and delete blog posts
+8. Likes
+* User can view likes on posts
+* User can add like and unlike to posts
+9. Author image
+* Author image is visible in the post
+10. Finish Readme and Testing
+* User can view the completed readme from github repo
+* User can view the completed testing from github repo
+11. Deployment
+* Finish the blog and deploy to Heroku
+
+Detailed look can be found in the [Project Board](https://github.com/users/rebazp/projects/8/views/1)
