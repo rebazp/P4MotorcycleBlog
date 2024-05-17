@@ -21,7 +21,7 @@ This simple and easy to use blog is for the creator and users to share memories.
 * [Color Scheme](#color-scheme)
 * [Images](#images)
 * [Database Scheme](#database-scheme)
-* [Data Model](#data-models)
+* [Data Models](#data-models)
 * [User Journey](#user-journey)
 ### [Security Features](#security-features-1)
 ### [Features](#features-1)
@@ -199,4 +199,4 @@ All images used in these blog posts are my own.
 
 ### User Journey 
 
-![User Journey]()
+![User Journey](media/images/UserJourney.jpeg)
