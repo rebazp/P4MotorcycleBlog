@@ -20,10 +20,9 @@ This simple and easy to use blog is for the creator and users to share memories.
 ### [Design](#design-1)
 * [Color Scheme](#color-scheme)
 * [Images](#images)
-* [Wireframes](#wireframes)
+* [Database Scheme](#database-scheme)
 * [Data Model](#data-models)
 * [User Journey](#user-journey)
-* [Database Scheme](#database-scheme)
 ### [Security Features](#security-features-1)
 ### [Features](#features-1)
 * [Existing Features](#existing-features)
@@ -165,3 +164,28 @@ The blog is easy to read and navigate through. The navbar contains the links to 
 ### Images
 
 All images used in these blog posts are my own.
+
+### Database Scheme
+
+![Database](media/images/DatabaseSchemeMCBlog.jpeg)
+
+### Data Models
+
+1. AllAuth User Model
+    * Django Allauth, the User model is the default user model provided by the Django authentication system.
+    * The User entity has a many-to-many relationship with the blog posts. This means that a User can have many blog posts and interact with other blog posts through likes, comments, edits, deletes etc.
+---
+3. Post Model
+    * As a user you can create blog posts.
+    * Admin can add, delete and update posts through djangos admin panel.
+    * Only Admin can change the data in the backend.
+    * User can see the posts created by other users.
+    * Tools to be used in posts are: title, body, slug, author, featured-image, author-image, excert, updated-on, created-on, status, likes and id.
+    * Full CRUD functionality is available to the user.
+---
+4. Comment Model
+    * As a user you can create blog comments.
+    * Admin can add, delete and update comments through djangos admin panel.
+    * Only Admin can change the data in the backend.
+    * Tools to be used in comments are: post, name, user, email, body, created-on, approved and id.
+    * Full CRUD functionality is available to the user.
