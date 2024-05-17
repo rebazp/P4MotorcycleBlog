@@ -438,3 +438,41 @@ Live deployment can be found on this [View Rebaz Motorcycle Blog Live Website He
 4. Click 'Open App' to view the deployed live site.
 
 Site is now live
+
+## Testing
+Please see  [TESTING.md](TESTING.md) for all the detailed testing performed.
+
+## References
+For thhis project I have had inspiration from the Code Institute example project, I think therefore i blog and tutorials from Youtube. Most part of the code that I've used in this project is my own, which I have learned during my time studying at Code Institute.
+
+* Code Institute project 4 [I Think Therefore I Blog](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FSD101_WTS+2023_Q3/courseware/56a2da0940b4411d8a38c2b093a22c60/4565659a34d648b8b8edd063c3182180/)
+* Youtube series Django Tutorial by [Net Ninja](https://www.youtube.com/watch?v=n-FTlQ7Djqc&list=PL4cUxeGkcC9ib4HsrXEYpQnTOTZE1x0uc&index=1&ab_channel=NetNinja)
+* Youtube series Python Django Tutorial by [Corey Schafer](https://www.youtube.com/watch?v=UmljXZIypDc&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=1&ab_channel=CoreySchafer)
+* Yoube Python Django Web Framework by [FreeCodeCamp](https://www.youtube.com/watch?v=F5mRW0jo-U4&ab_channel=freeCodeCamp.org)
+
+### Docs
+I have utilized many websites for this project and this is some of them.
+
+* [W3 Schools](https://www.w3schools.com)
+* [Stack Overflow](https://stackoverflow.com/)
+* [Python Django Web Framework](https://www.djangoproject.com/start/overview/)
+* [Code Institute](https://learn.codeinstitute.net/dashboard)
+* [Bootstrap 5.3](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+* [Django docs](https://docs.djangoproject.com/en/4.2/contents/)
+* [Django Allauth](https://django-allauth.readthedocs.io/en/latest/)
+* [Django and Static Assets](https://devcenter.heroku.com/articles/django-assets)
+* [Cloudinary](https://cloudinary.com/documentation/diagnosing_error_codes_tutorial)
+* [Google](https://www.google.com/)
+* [Youtube](https://www.youtube.com)
+
+### Content
+
+* All of the content is imaginary and written by the developer, Rebaz Pappiland.
+* All images were taken by Rebaz. Default image for post and profile were taken from Google.
+
+### Acknowledgments
+
+* I would like to thank the tutors at Code Institute for their help.
+* I would like to thank Thomas Tomo for his amazing README which gave me inspiration for mine.
+* I would also like to extend my appreciation to the Slack community for their continuous engagement and willingness to share knowledge and help me through my projects, especially Tomas K. The collaborative environment provided a platform for learning, troubleshooting, and gaining inspiration from fellow developers.
+* My mentor Rohit Sharma for his patience and guidance.
