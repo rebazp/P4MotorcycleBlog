@@ -6,7 +6,7 @@ This simple and easy to use blog is for the creator and users to share memories.
 
 ![Home Screen](media/images/responsive.jpg)
 
-[View Rebaz Motorcycle Blog Live Website Here]()
+[View Rebaz Motorcycle Blog Live Website Here](https://mcblog-ee5e41319303.herokuapp.com/)
 ---
 
 ## Table of Contents
@@ -363,7 +363,7 @@ All images used in these blog posts are my own.
 
 ## Deployment and Local Developement
 
-Live deployment can be found on this [View Rebaz Motorcycle Blog Live Website Here]()
+Live deployment can be found on this [View Rebaz Motorcycle Blog Live Website Here](https://mcblog-ee5e41319303.herokuapp.com/)
 
 ### Local Developement
 
