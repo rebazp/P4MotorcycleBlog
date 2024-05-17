@@ -218,3 +218,13 @@ All images used in these blog posts are my own.
 ### CSRF Protection
 
 * Django provides built-in protection against Cross-Site Request Forgery (CSRF) attacks. CSRF tokens are generated for each user session, and they are required to submit forms or perform state-changing actions. When a user logs out, the session and associated CSRF token are invalidated, making it difficult for an attacker to forge a valid request using a copied URL.
+
+## Features
+
+* Home page with a short introduction of the blog and a picture taken by Rebaz of his current bike.
+* Blog posts page with the most recent blog posts.
+* Navigation bar and footer.
+* User can make an account, login and and logout.
+* When logged in, users can add post and comments.
+* Users can edit and delete their posts and comments.
+* User can like blog posts.
