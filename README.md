@@ -128,3 +128,40 @@ Agile Methodology was used to help prioritize and organize tasks, writting the u
 * Finish the blog and deploy to Heroku
 
 Detailed look can be found in the [Project Board](https://github.com/users/rebazp/projects/8/views/1)
+
+### Target Audience
+
+* People seeking to connect with other motorcyclists.
+* People seeking to share motorcycle memories and pictures.
+
+### First Time User
+
+* Simple and intuitive blog with easy navigation.
+* Easy Registration process.
+* Simple to use on any device.
+
+### Registered User
+
+* Seamless login process with a secure and personalized user account.
+* Browsing through posts and see related comments.
+* Give comments and likes.
+
+### Admin User
+
+* Secure and separate login portal for admin users with appropriate access control.
+* Access to an admin dashboard for managing users, posts, comments and likes.
+* Ability to add, edit, or delete user, posts, comments likes.
+
+## Design
+
+The blog is easy to read and navigate through. The navbar contains the links to guide the user through the blog. The footer is visible and connects the readers to social media.
+
+### Color Scheme
+
+[coolors.co](https://coolors.co/0a1128-001f54-034078-1282a2-fefcfb)
+
+![screenshot](media/images/palette.jpg)
+
+### Images
+
+All images used in these blog posts are my own.
