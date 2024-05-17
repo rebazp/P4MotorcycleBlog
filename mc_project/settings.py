@@ -29,13 +29,16 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 #CROS-ORIGIN Resource Sharing CORS
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ['8000-rebazp-p4motorcycleblog-uloqwi7v9g2.ws-eu111.gitpod.io',
-'mcblog.herokuapp.com', 'mcblog-ee5e41319303.herokuapp.com', 'localhost',
+'mcblog.herokuapp.com', 
+'mcblog-ee5e41319303.herokuapp.com', 
+'localhost', 
+'8000-rebazp-p4motorcycleblog-uloqwi7v9g2.ws-eu114.gitpod.io',
 ]
 
 # Application definition
@@ -126,6 +129,7 @@ DATABASES = {
 
 CSRF_TRUSTED_ORIGINS = [
 "https://8000-rebazp-p4motorcycleblog-uloqwi7v9g2.ws-eu111.gitpod.io",
+"https://8000-rebazp-p4motorcycleblog-uloqwi7v9g2.ws-eu114.gitpod.io"
 ]
 
 # Password validation
