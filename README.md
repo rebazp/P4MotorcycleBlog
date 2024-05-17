@@ -312,3 +312,51 @@ All images used in these blog posts are my own.
 ### Features Left to Implement 
 
 * Implement search functionality, enabling users to search for posts based on blog post content.
+
+## Technologies Used
+
+### Languages Used
+
+* [HTML5](https://en.wikipedia.org/wiki/HTML5)
+* [CSS3](https://en.wikipedia.org/wiki/CSS)
+* [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+* [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+
+### Databases Used
+
+* [ElephantSQL](https://www.elephantsql.com/) - Postgres database.
+* [Cloudinary](https://cloudinary.com/) - Online static file storage.
+
+### Frameworks Used
+
+* [Django](https://www.djangoproject.com/) - Python framework.
+* [Bootstrap 5.3](https://getbootstrap.com/docs/5.3/getting-started/introduction/) - CSS framework.
+
+### Programs Used
+
+* [Github](https://github.com/) - Storing the code online.
+* [Gitpod](https://www.gitpod.io/) - To write the code.
+* [Heroku](https://www.heroku.com/) - Used as the cloud-based platform to deploy the site.
+* [Google Fonts](https://fonts.google.com/) - Import main font the website.
+* [Moqups](https://moqups.com/) - Used to create wireframes and schemes.
+* [Am I Responsive](https://ui.dev/amiresponsive) - To show the website image on a range of devices.
+* [Git](https://git-scm.com/) - Version control.
+* [JSHint](https://jshint.com/) - Used to validate JavaScript.
+* [W3C Markup Validation Service](https://validator.w3.org/) - Used to validate HTML.
+* [CSS Validation Service](https://jigsaw.w3.org/css-validator/) - Used to validate CSS.
+* [CI Python Linter](https://pep8ci.herokuapp.com/#) - Used to validate Python.
+
+### Installed Packages
+- asgiref==3.8.1
+- cloudinary==1.40.0
+- crispy-bootstrap5==2024.2
+- dj-database-url==0.5.0
+- dj3-cloudinary-storage==0.0.6
+- Django==5.0.6
+- django-allauth==0.62.1
+- django-crispy-forms==2.1
+- django-summernote==0.8.20.0
+- gunicorn==22.0.0
+- psycopg2==2.9.9
+- pytz==2024.1
+- sqlparse==0.5.0
