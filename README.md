@@ -24,6 +24,9 @@ This simple and easy to use blog is for the creator and users to share memories.
 * [Data Models](#data-models)
 * [User Journey](#user-journey)
 ### [Security Features](#security-features-1)
+* [User Authentication](#user-authentication)
+* [Login Decorator](#login-decorator)
+* [CSRF Protection](#csrf-protection)
 ### [Features](#features-1)
 * [Existing Features](#existing-features)
 * [Features Left to Implement](#features-left-to-implement)
@@ -200,3 +203,18 @@ All images used in these blog posts are my own.
 ### User Journey 
 
 ![User Journey](media/images/UserJourney.jpeg)
+
+## Security Features
+
+### User Authentication
+
+* Django Allauth is a popular authentication and authorization library for Django, which provides a set of features for managing user authentication, registration, and account management.
+
+### Login Decorator
+
+* add_category, add_comment, add_post, article_details, delete_post and update_post: These views allows user to interact with the blog and requires user authentication.
+* This ensures that only authenticated users can access these views.
+
+### CSRF Protection
+
+* Django provides built-in protection against Cross-Site Request Forgery (CSRF) attacks. CSRF tokens are generated for each user session, and they are required to submit forms or perform state-changing actions. When a user logs out, the session and associated CSRF token are invalidated, making it difficult for an attacker to forge a valid request using a copied URL.
