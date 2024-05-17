@@ -228,3 +228,87 @@ All images used in these blog posts are my own.
 * When logged in, users can add post and comments.
 * Users can edit and delete their posts and comments.
 * User can like blog posts.
+
+### Existing Features
+
+* Home page
+    * Displays a navigation bar at the top, introduction in the center and footer at the bottom.
+
+![Home Page](media/images/features/home.jpg)
+
+* Once logged in the Logout, Posts and Add a Post links appear in the navbar.
+
+![Logged In](media/images/features/homeloggedin.jpg)
+
+* Register
+    * User can create an account.
+
+![Register](media/images/features/register.jpg)
+
+* Login
+    * User can login into an account, if they have created one.
+
+![Login](media/images/features/login.jpg)
+
+* Posts
+    * User can view posts when logged in.
+
+![Posts List](media/images/features/postlist.jpg)
+
+* Add blog post
+    * Users can create blog post by clicking on the add a post button.
+    * Form validation is implemented to make sure form are submitted correctly and if there is an error user will be notified with alert message.
+    * When user creates blog post they get redirected to post page.
+
+![Add Blog Post](media/images/features/addpost.jpg)
+
+* Edit blog post
+    * Users can edit blog post they created by pressing on the edit button.
+    * When user edit blog post they get redirected to post page.
+
+![Edit Blog Post](media/images/features/editpost.jpg)
+
+* Delete blog post
+    * Users can delete a blog post they created by pressing on the delete button.
+    * When user delete blog post they get redirected to post page.
+
+![Delete Blog Post](media/images/features/deletpost.jpg)
+
+* View blog post
+    * When user press on a blog post they can see the content of the blog post, comments and likes. The user can leave comments and delete or edit their own comments.
+    
+![View Blog Post](media/images/features/postdetail.jpg)
+
+* Delete comment
+    * Users can delete a blog comment they created by pressing on the delete button.
+    * When user delete blog comment they get redirected to post page.
+
+![Delete Comment](media/images/features/deletecomment.jpg)
+
+* Edit comment
+    * Users can edit a blog comment they created by pressing on the edit button.
+    * When user edit blog comment they get redirected to post page.
+
+![Edit Comment](media/images/features/editcomment.jpg)
+
+* Like & comment blog post
+    * User can like a blog post and see total likes.
+    * When user have pressed the button the total likes changes.
+    * User can comment a blog post and see total comments.
+    * When user have commented a blog post the total comments changes.
+
+![Like & Comments](media/images/features/likesandcomments.jpg)
+
+* Logout
+    * User can logout from their account.
+
+![Logout](media/images/features/logout.jpg)
+
+* Admin Features
+    * Django built in admin panel allows admin control over the website.
+    * Admin can access admin panel through his navigation bar.
+    * Can add, update, delete user, post, comment, like and groups.
+
+### Features Left to Implement 
+
+* Implement search functionality, enabling users to search for posts based on blog post content.
