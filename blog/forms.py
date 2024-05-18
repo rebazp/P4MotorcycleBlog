@@ -14,7 +14,7 @@ class CommentForm(forms.ModelForm):
 class PostForm(forms.ModelForm):
     class Meta: # Specify the model and fields to include in the form
         model = Post
-        fields = ['title', 'body', 'featured_image', 'author_image',]
+        fields = ['title', 'body', 'mc_brand_name', 'mc_type_name', 'featured_image', 'author_image',]
 
     # Custom initialization method to set field requirements
     def __init__(self, *args, **kwargs):

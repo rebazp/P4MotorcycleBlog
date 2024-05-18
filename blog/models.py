@@ -11,15 +11,17 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 # Model representing a blog post
 class Post(models.Model):
-    title = models.CharField(max_length=200, unique=True) # Title of the post, must be unique
+    title = models.CharField(max_length=150, unique=True) # Title of the post, must be unique
     body = models.TextField(default='') # Body of the post
-    slug = models.SlugField(max_length=200, unique=True) # URL-friendly slug, must be unique
+    slug = models.SlugField(max_length=150, unique=True) # URL-friendly slug, must be unique
     author = models.ForeignKey( # Author of the post, linked to the User model
         User, on_delete=models.CASCADE, related_name="blog_posts"
     )
     featured_image = CloudinaryField('image', default='placeholder') # Featured image for the post, stored using Cloudinary
     author_image = CloudinaryField('image', default='placeholder', blank=True, null=True) # Author's profile image, stored using Cloudinary, optional field
     excerpt = models.TextField(blank=True) # Excerpt of the post
+    mc_brand_name = models.CharField(max_length=50, blank=True, null=True) # Motorcycle brand name
+    mc_type_name = models.CharField(max_length=50, blank=True, null=True)  # Motorcycle type
     updated_on = models.DateTimeField(auto_now=True) # Timestamp of the last update
     created_on = models.DateTimeField(auto_now_add=True) # Timestamp of post creation
     status = models.IntegerField(choices=STATUS, default=1) # Status of the post (draft or published)
