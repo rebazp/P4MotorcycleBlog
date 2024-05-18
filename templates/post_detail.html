@@ -12,7 +12,8 @@
                 <!-- Display the post title -->
                 <h1 class="post-title">{{ post.title }}</h1>
                 <!-- Display the post author and creation date -->
-                <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
+                <p class="post-subtitle">{{ post.author }} | {{ post.created_on }} | Type: {{post.mc_type_name|default_if_none:"" }} |
+                    Brand: {{post.mc_brand_name|default_if_none:"" }} |</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- Display the featured image if it exists, otherwise display a placeholder image -->
