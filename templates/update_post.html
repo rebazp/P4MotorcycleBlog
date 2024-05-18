@@ -4,56 +4,108 @@
 
 <!-- Container for the edit post form -->
 <div class="container">
-   <!-- Row to center the form -->
-  <div class="row justify-content-center">
-    <!-- Column for the form -->
-    <div class="col-md-8">
-      <!-- Heading for the form -->
-      <h1 class="text-center">Edit your post</h1>
-      <!-- Form for editing the post -->
-      <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        <!-- Form group for the post title -->
-        <div class="form-group row">
-          <label for="id_title" class="col-sm-3 col-form-label">Title:</label>
-          <div class="col-sm-5">
-            <!-- Input field for the post title -->
-            {{ form.title }}
-          </div>
-        </div>
-        <!-- Form group for the post body -->
-        <div class="form-group row">
-          <label id="text_input" for="id_body" class="col-sm-3 col-form-label">Text:</label>
-          <div class="col-sm-5">
-            <!-- Text area for the post body -->
-            {{ form.body }}
-          </div>
-        </div>
-        <!-- Form group for the post image -->
-        <div class="form-group row">
-          <label for="id_featured_image" class="col-sm-3 col-form-label">Post Image:(optional)</label>
-          <div class="col-sm-5">
-            <!-- Input field for uploading the post image -->
-            <input type="file" style="margin-bottom: 20px;" id="id_featured_image" name="featured_image">
-          </div>
-        </div>
-        <!-- Form group for the author image -->
-        <div class="form-group row">
-          <label for="id_author_image" class="col-sm-3 col-form-label">Profile Image:(optional)</label>
-          <div class="col-sm-5">
-            <!-- Input field for uploading the author image -->
-            <input type="file" id="id_author_image" name="author_image">
-          </div>
-        </div>
-        <!-- Button to submit the form -->
-        <div class="form-group row">
-          <div class="col-sm-5 offset-sm-3">
-            <button style="margin-top: 20px;" class="btn btn-signup right btn-lg" type="submit">Post</button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
+  <!-- Row to center the form -->
+ <div class="row justify-content-center">
+   <!-- Column for the form -->
+   <div class="col-md-8">
+     <!-- Heading for the form -->
+     <h1 class="text-center">Edit your post</h1>
+     <!-- Form for editing the post -->
+     <form method="POST" enctype="multipart/form-data">
+       {% csrf_token %}
+       <!-- Form group for the post title -->
+       <div class="form-group row">
+         <label for="id_title" class="col-sm-3 col-form-label">Title:</label>
+         <div class="col-sm-5">
+           <!-- Input field for the post title -->
+           {{ form.title }}
+           <!-- Display errors for title input if any -->
+           {% if form.title.errors %}
+             <div class="text-danger">
+               {{ form.title.errors }}
+             </div>
+           {% endif %}
+         </div>
+       </div>
+       <!-- Form group for the post body -->
+       <div class="form-group row">
+         <label id="text_input" for="id_body" class="col-sm-3 col-form-label">Text:</label>
+         <div class="col-sm-5">
+           <!-- Text area for the post body -->
+           {{ form.body }}
+           <!-- Display errors for body input if any -->
+           {% if form.body.errors %}
+             <div class="text-danger">
+               {{ form.body.errors }}
+             </div>
+           {% endif %}
+         </div>
+       </div>
+       <!-- Form group for mc brand name input -->
+       <div class="form-group row">
+         <label for="id_mc_brand_name" class="col-sm-3 col-form-label">MC Brand Name:</label>
+         <div class="col-sm-5">
+           <!-- MC Brand Name input field -->
+           {{ form.mc_brand_name }}
+           <!-- Display errors for mc brand name input if any -->
+           {% if form.mc_brand_name.errors %}
+             <div class="text-danger">
+               {{ form.mc_brand_name.errors }}
+             </div>
+           {% endif %}
+         </div>
+       </div>
+       <!-- Form group for mc type name input -->
+       <div class="form-group row">
+         <label for="id_mc_type_name" class="col-sm-3 col-form-label">MC Type Name:</label>
+         <div class="col-sm-5">
+           <!-- MC Type Name input field -->
+           {{ form.mc_type_name }}
+           <!-- Display errors for mc type name input if any -->
+           {% if form.mc_type_name.errors %}
+             <div class="text-danger">
+               {{ form.mc_type_name.errors }}
+             </div>
+           {% endif %}
+         </div>
+       </div>
+       <!-- Form group for the post image -->
+       <div class="form-group row">
+         <label for="id_featured_image" class="col-sm-3 col-form-label">Post Image:(optional)</label>
+         <div class="col-sm-5">
+           <!-- Input field for uploading the post image -->
+           <input type="file" style="margin-bottom: 20px;" id="id_featured_image" name="featured_image">
+           <!-- Display errors for featured image input if any -->
+           {% if form.featured_image.errors %}
+             <div class="text-danger">
+               {{ form.featured_image.errors }}
+             </div>
+           {% endif %}
+         </div>
+       </div>
+       <!-- Form group for the author image -->
+       <div class="form-group row">
+         <label for="id_author_image" class="col-sm-3 col-form-label">Profile Image:(optional)</label>
+         <div class="col-sm-5">
+           <!-- Input field for uploading the author image -->
+           <input type="file" id="id_author_image" name="author_image">
+           <!-- Display errors for author image input if any -->
+           {% if form.author_image.errors %}
+             <div class="text-danger">
+               {{ form.author_image.errors }}
+             </div>
+           {% endif %}
+         </div>
+       </div>
+       <!-- Button to submit the form -->
+       <div class="form-group row">
+         <div class="col-sm-5 offset-sm-3">
+           <button style="margin-top: 20px;" class="btn btn-signup right btn-lg" type="submit">Post</button>
+         </div>
+       </div>
+     </form>
+   </div>
+ </div>
 </div>
 
 {% endblock %}
