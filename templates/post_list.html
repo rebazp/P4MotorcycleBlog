@@ -49,7 +49,8 @@
                 <!-- Post metadata -->
                 <p class="card-text text-muted h6">
                   {{ post.created_on}} -
-                  <i class="far fa-heart"></i> | {{post.number_of_likes }} |
+                  <i class="far fa-heart"></i> | {{post.number_of_likes }} | Type: {{post.mc_type_name|default_if_none:"" }} |
+                  Brand: {{post.mc_brand_name|default_if_none:"" }} |
                 </p>
               </a>
               <!-- Edit and delete options for authenticated users who are the post author -->
