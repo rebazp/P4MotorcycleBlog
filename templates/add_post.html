@@ -41,6 +41,34 @@
             {% endif %}
           </div>
         </div>
+        <!-- Form group for mc brand name input -->
+        <div class="form-group row">
+          <label for="id_mc_brand_name" class="col-sm-3 col-form-label">MC Brand Name:</label>
+          <div class="col-sm-5">
+            <!-- MC Brand Name input field -->
+            {{ form.mc_brand_name }}
+            <!-- Display errors for mc brand name input if any -->
+            {% if form.mc_brand_name.errors %}
+              <div class="text-danger">
+                {{ form.mc_brand_name.errors }}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+        <!-- Form group for mc type name input -->
+        <div class="form-group row">
+          <label for="id_mc_type_name" class="col-sm-3 col-form-label">MC Type Name:</label>
+          <div class="col-sm-5">
+            <!-- MC Type Name input field -->
+            {{ form.mc_type_name }}
+            <!-- Display errors for mc type name input if any -->
+            {% if form.mc_type_name.errors %}
+              <div class="text-danger">
+                {{ form.mc_type_name.errors }}
+              </div>
+            {% endif %}
+          </div>
+        </div>
         <!-- Form group for featured image input -->
         <div class="form-group row">
           <label for="id_featured_image" class="col-sm-3 col-form-label">Post Image:(optional)</label>
