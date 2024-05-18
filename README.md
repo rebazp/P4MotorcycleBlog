@@ -190,7 +190,7 @@ All images used in these blog posts are my own.
     * Admin can add, delete and update posts through djangos admin panel.
     * Only Admin can change the data in the backend.
     * User can see the posts created by other users.
-    * Tools to be used in posts are: title, body, slug, author, featured-image, author-image, excert, updated-on, created-on, status, likes and id.
+    * Tools to be used in posts are: title, body, slug, author, featured-image, author-image, excert, brand-name, type-name, updated-on, created-on, status, likes and id.
     * Full CRUD functionality is available to the user.
 ---
 4. Comment Model
