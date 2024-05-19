@@ -59,5 +59,5 @@ The project was tested on multiple web browsers to check for compatibility issue
 <summary> Samsung Internet (Mobile)
 </summary>
 
-![Samsung Internet Mobile]()
+![Samsung Internet Mobile](media/images/testing/browser/mobile.jpg)
 </details
