@@ -264,5 +264,18 @@ Testing with <https://jigsaw.w3.org/css-validator/> show no errors in CSS:
 
 ### Resolved Bugs
 
+#### CRUD Alert
+
+* When deleting a post and comment no CRUD alert appeared.
+
+#### Remove Admin Approval
+
+* When deleting a post or comment I didn't want the admins approval. I had some issues with the migrations not working properly and had to restart my IDE to solve the migration issue and managed to solved the bug.
+
+#### Update Blog Post Text
+
+* When editing the blog post the new text didn't appear for some reason. After asking the slack community I got the tip to check my models. I solved the bug by changing the post models and deleted the content function and kept body.
 
 ### Unresolved Bugs
+
+* There are no unresolved bugs.
