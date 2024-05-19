@@ -160,3 +160,96 @@ Device testing was conducted on a variety of phone models, including Samsung Gal
 
 ![500 Error Page]()
 </details>
+
+### Lighthouse Report
+
+<details>
+<summary> Home Page
+</summary>
+
+![Home Page](media/images/testing/lighthouse/lhhome.jpg)
+</details>
+
+<details>
+<summary> Register Page
+</summary>
+
+![Register Page]()
+</details>
+
+<details>
+<summary> Login Page
+</summary>
+
+![Login Page](media/images/testing/lighthouse/lhlogin.jpg)
+</details>
+
+<details>
+<summary> Logout Page
+</summary>
+
+![Logout Page](media/images/testing/lighthouse/lhlogout.jpg)
+</details>
+
+<details>
+<summary> Add Post Page
+</summary>
+
+![Add Post Page](media/images/testing/lighthouse/lhaddpost.jpg)
+</details>
+
+<details>
+<summary> View Posts Page
+</summary>
+
+![View Posts Page](media/images/testing/lighthouse/lhpostlist.jpg)
+</details>
+
+<details>
+<summary> View Posts Detail Page
+</summary>
+
+![View Posts Detail Page](media/images/testing/lighthouse/lhpostdetail.jpg)
+</details>
+
+<details>
+<summary> Edit Post Page
+</summary>
+
+![Edit Post Page](media/images/testing/lighthouse/lheditpost.jpg)
+</details>
+
+<details>
+<summary> Delete Post Page
+</summary>
+
+![Delete Post Page](media/images/testing/lighthouse/lhdeletepost.jpg)
+</details>
+
+<details>
+<summary> Edit Comment Page
+</summary>
+
+![Edit Comment Page](media/images/testing/lighthouse/lheditcomment.jpg)
+</details>
+
+<details>
+<summary> Delete Comment Page
+</summary>
+
+![Delete Comment Page](media/images/testing/lighthouse/lhdeletecomment.jpg)
+</details>
+
+<details>
+<summary> 404 Error Page
+</summary>
+
+![404 Error Page](media/images/testing/lighthouse/lherror404.jpg)
+</details>
+
+<details>
+<summary> 500 Error Page
+</summary>
+
+![500 Error Page]()
+</details>
