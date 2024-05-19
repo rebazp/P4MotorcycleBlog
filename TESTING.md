@@ -165,7 +165,7 @@ Device testing was conducted on a variety of phone models, including Samsung Gal
 
 Testing with <https://jigsaw.w3.org/css-validator/> show no errors in CSS:
 
-![Validator testing](static/images-readme/css-validator.png)
+![Validator testing](media/images/testing/css.jpg)
 
 ## Lighthouse Report
 
