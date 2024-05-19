@@ -309,6 +309,47 @@ All images used in these blog posts are my own.
     * Admin can access admin panel through his navigation bar.
     * Can add, update, delete user, post, comment, like and groups.
 
+#### CRUD Confirmation Logged In
+Confirmation message appears when the user has succefully logged in. 
+
+![CRUD Logged In](media/images/features/crud/crudlogin.jpg)
+
+#### CRUD Confirmation Logged Out
+Confirmation message appears when the user has succefully logged out. 
+
+![CRUD Logged Out](media/images/features/crud/crudlogout.jpg)
+
+#### CRUD Confirmation Post Added
+Confirmation message appears when the user has succefully added a post. 
+
+![CRUD Post Added](media/images/features/crud/crudaddpost.jpg)
+
+#### CRUD Confirmation Post Edited
+Confirmation message appears when the user has succefully edited a post. 
+
+![CRUD Post Edited](media/images/features/crud/crudeditpost.jpg)
+
+#### CRUD Confirmation Post Deleted
+Confirmation message appears when the user has succefully deleted a post. 
+
+![CRUD Post Deleted]()
+
+#### CRUD Confirmation Comment Added
+Confirmation message appears when the user has succefully added a comment. 
+
+![CRUD Comment Added](media/images/features/crud/crudaddcomment.jpg)
+
+#### CRUD Confirmation Comment Edited
+Confirmation message appears when the user has succefully edited a comment. 
+
+![CRUD Comment Edited](media/images/features/crud/crudeditcomment.jpg)
+
+
+#### CRUD Confirmation Comment Deleted
+Confirmation message appears when the user has succefully deleted a comment. 
+
+![CRUD Comment Deleted]()
+
 ### Features Left to Implement 
 
 * Implement search functionality, enabling users to search for posts based on blog post content.

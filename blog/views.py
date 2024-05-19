@@ -152,11 +152,10 @@ class DeletePostView(LoginRequiredMixin, DeleteView):
     def dispatch(self, request, *args, **kwargs):
         self.object = self.get_object()
         if self.object.author != self.request.user: # Ensure the user is the author of the post
-            messages.error(self.request, 'You are not authorized to delete this post.)')
+            messages.error(self.request, 'You are not authorized to delete this post.')
             return HttpResponseRedirect(self.success_url)
         return super().dispatch(request, *args, **kwargs)
 
-   
     def delete(self, request, *args, **kwargs):
         self.object = self.get_object()
         success_url = self.get_success_url()
