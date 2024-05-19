@@ -81,7 +81,8 @@ Device testing was conducted on a variety of phone models, including Samsung Gal
 <summary> Register Page
 </summary>
 
-![Register Page]()
+![Register Page](media/images/testing/code-validation/w3signup.jpg)
+- Since I'am using templates I cannot fix these errors.
 </details>
 
 <details>
@@ -180,7 +181,7 @@ Testing with <https://jigsaw.w3.org/css-validator/> show no errors in CSS:
 <summary> Register Page
 </summary>
 
-![Register Page]()
+![Register Page](media/images/testing/lighthouse/lhsignup.jpg)
 </details>
 
 <details>
@@ -264,10 +265,6 @@ Testing with <https://jigsaw.w3.org/css-validator/> show no errors in CSS:
 
 ### Resolved Bugs
 
-#### CRUD Alert
-
-* When deleting a post and comment no CRUD alert appeared.
-
 #### Remove Admin Approval
 
 * When deleting a post or comment I didn't want the admins approval. I had some issues with the migrations not working properly and had to restart my IDE to solve the migration issue and managed to solved the bug.
@@ -279,3 +276,5 @@ Testing with <https://jigsaw.w3.org/css-validator/> show no errors in CSS:
 ### Unresolved Bugs
 
 * There are no unresolved bugs.
+
+## Features Testing
