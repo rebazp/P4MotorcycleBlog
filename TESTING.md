@@ -161,7 +161,13 @@ Device testing was conducted on a variety of phone models, including Samsung Gal
 ![500 Error Page]()
 </details>
 
-### Lighthouse Report
+### CSS Testing
+
+Testing with <https://jigsaw.w3.org/css-validator/> show no errors in CSS:
+
+![Validator testing](static/images-readme/css-validator.png)
+
+## Lighthouse Report
 
 <details>
 <summary> Home Page
@@ -253,3 +259,10 @@ Device testing was conducted on a variety of phone models, including Samsung Gal
 
 ![500 Error Page]()
 </details>
+
+## Bugs
+
+### Resolved Bugs
+
+
+### Unresolved Bugs
