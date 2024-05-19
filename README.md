@@ -354,6 +354,8 @@ Confirmation message appears when the user has succefully deleted a comment.
 
 * Implement search functionality, enabling users to search for posts based on blog post content.
 
+* Implement CRUD alert for deleting post and comment.
+
 ## Technologies Used
 
 ### Languages Used
