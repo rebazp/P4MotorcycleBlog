@@ -329,11 +329,6 @@ Confirmation message appears when the user has succefully edited a post.
 
 ![CRUD Post Edited](media/images/features/crud/crudeditpost.jpg)
 
-#### CRUD Confirmation Post Deleted
-Confirmation message appears when the user has succefully deleted a post. 
-
-![CRUD Post Deleted]()
-
 #### CRUD Confirmation Comment Added
 Confirmation message appears when the user has succefully added a comment. 
 
@@ -343,12 +338,6 @@ Confirmation message appears when the user has succefully added a comment.
 Confirmation message appears when the user has succefully edited a comment. 
 
 ![CRUD Comment Edited](media/images/features/crud/crudeditcomment.jpg)
-
-
-#### CRUD Confirmation Comment Deleted
-Confirmation message appears when the user has succefully deleted a comment. 
-
-![CRUD Comment Deleted]()
 
 ### Features Left to Implement 
 
