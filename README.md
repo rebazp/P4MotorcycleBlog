@@ -304,6 +304,16 @@ All images used in these blog posts are my own.
 
 ![Logout](media/images/features/logout.jpg)
 
+* Error 404
+    * This page appears when a invalid url is entered.
+
+![Error 404](media/images/features/404.jpg)
+
+* Error 500
+    * This page appears when there is a server error.
+
+![Error 500](media/images/features/500.jpg)
+
 * Admin Features
     * Django built in admin panel allows admin control over the website.
     * Admin can access admin panel through his navigation bar.
