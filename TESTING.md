@@ -159,7 +159,8 @@ Device testing was conducted on a variety of phone models, including Samsung Gal
 <summary> 500 Error Page
 </summary>
 
-![500 Error Page]()
+![500 Error Page](media/images/testing/code-validation/w3500.jpg)
+- Since I'am using templates with django I cannot fix these errors.
 </details>
 
 ### CSS Testing
