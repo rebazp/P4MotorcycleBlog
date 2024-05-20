@@ -258,7 +258,7 @@ Testing with <https://jigsaw.w3.org/css-validator/> show no errors in CSS:
 <summary> 500 Error Page
 </summary>
 
-![500 Error Page]()
+![500 Error Page](media/images/testing/lighthouse/lherror500.jpg)
 </details>
 
 ## Bugs
