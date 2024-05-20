@@ -278,3 +278,6 @@ Testing with <https://jigsaw.w3.org/css-validator/> show no errors in CSS:
 * There are no unresolved bugs.
 
 ## Features Testing
+
+![Features Testing Page 1](media/images/testing1.jpg)
+![Features Testing Page 2](media/images/testing2.jpg)
