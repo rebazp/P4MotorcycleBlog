@@ -507,4 +507,4 @@ I have utilized many websites for this project and this is some of them.
 * I would like to thank the tutors at Code Institute for their help.
 * I would like to thank Thomas Tomo for his amazing README which gave me inspiration for mine.
 * I would also like to extend my appreciation to the Slack community for their continuous engagement and willingness to share knowledge and help me through my projects, especially Tomas K. The collaborative environment provided a platform for learning, troubleshooting, and gaining inspiration from fellow developers.
-* My mentor Rohit Sharma for his patience and guidance.
+* My mentor Rohit Sharma for his knowledge and guidance.
