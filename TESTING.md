@@ -5,17 +5,17 @@ Return to [README](README.md)
 Comprehensive testing has been performed to ensure the website's seamless and optimal functionality.
 
 ## Table of Contents
-### [Responsiveness Testing](#responsiveness-testing-1)
-### [Browser Compatibility Testing](#browser-compatibility-testing-1)
-### [Device Testing](#device-testing-1)
-### [Code Validation](#code-validation-1)
+### [Responsiveness Testing](#responsiveness-testing)
+### [Browser Compatibility Testing](#browser-compatibility-testing)
+### [Device Testing](#device-testing)
+### [Code Validation](#code-validation)
 * [HTML Validation](#html-validation)
 * [CSS Testing](#css-testing)
-### [Lighthouse Report](#lighthouse-report-1)
-### [Bugs](#bugs-1)
+### [Lighthouse Report](#lighthouse-report)
+### [Bugs](#bugs)
 * [Resolved Bugs](#resolved-bugs)
-* [Unresolved Bugs](#unresolved-bug)
-### [Features Testing](#features-testing-1)
+* [Unresolved Bugs](#unresolved-bugs)
+### [Features Testing](#features-testing)
 
 ## Responsiveness Testing
 
