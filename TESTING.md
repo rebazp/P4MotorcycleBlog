@@ -2,7 +2,11 @@
 
 Return to [README](README.md)
 - - -
-Comprehensive testing has been performed to ensure the website's seamless and optimal functionality.
+All testing for this project was conducted manually both during and after development. The anticipated outcomes of button clicks and feature tests are documented in this Testing.md file. This involved manually clicking buttons and links, and verifying that all functions performed as intended. All project functions are operational.
+
+Django, a Python framework, was primarily used, with JavaScript handling the alert messages. These messages function correctly. Currently, Motorcycle Blog has no social media presence, so the links direct to their respective homepages.
+
+As the project was developed using Bootstrap, it is fully responsive across all screen sizes.
 
 ## Table of Contents
 * [Responsiveness Testing](#responsiveness-testing)
