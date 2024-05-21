@@ -60,7 +60,7 @@ Comprehensive testing has been performed to ensure the website's seamless and op
 </summary>
 
 ![Samsung Internet Mobile](media/images/testing/browser/mobile.jpg)
-</details
+</details>
 
 ## Device Testing
 
