@@ -1,4 +1,4 @@
-# Rebaz Motorcycle Blog
+# Motorcycle Blog
 
 Join Rebaz and his passion for motorcycles in this amazing blog where he and his users share stories and pictures related to motorcycles. 
 This Django based blog allows users to create their own account so that they can leave blog posts, comments and likes. 
@@ -491,6 +491,7 @@ For thhis project I have had inspiration from the Code Institute example project
 * Youtube series Django Tutorial by [Net Ninja](https://www.youtube.com/watch?v=n-FTlQ7Djqc&list=PL4cUxeGkcC9ib4HsrXEYpQnTOTZE1x0uc&index=1&ab_channel=NetNinja)
 * Youtube series Python Django Tutorial by [Corey Schafer](https://www.youtube.com/watch?v=UmljXZIypDc&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=1&ab_channel=CoreySchafer)
 * Yoube Python Django Web Framework by [FreeCodeCamp](https://www.youtube.com/watch?v=F5mRW0jo-U4&ab_channel=freeCodeCamp.org)
+* Python Django Web Framework [Django Web Framework](https://www.djangoproject.com/start/overview/)
 
 ### Docs
 I have utilized many websites for this project and this is some of them.
